@@ -1,7 +1,7 @@
 import { ArrowUp, Instagram, Mail } from "lucide-react";
 // import Mike from "@/components/common/Mike";
 import { BRAND } from "@/constants/brand";
-import MikeScooty from "@/assets/MikeScooty.gif"
+import MikeScooty from "@/assets/MikeScooty.gif";
 import { motion } from "framer-motion";
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -9,8 +9,10 @@ export default function Footer() {
   return (
     <footer className="px-[6vw] pt-16 pb-10 text-center border-t border-line w-screen">
       {/* <Mike size={110} mood="wave" /> */}
-  
-      <p className="text-sm text-inkSoft mt-3 mb-4">Thanks for stopping by :)</p>
+
+      <p className="text-sm text-inkSoft mt-3 mb-4">
+        Thanks for stopping by :)
+      </p>
 
       <div className="flex justify-center gap-3 mb-4">
         <a
@@ -23,7 +25,9 @@ export default function Footer() {
           <Instagram size={16} />
         </a>
         <a
-          href={`mailto:${BRAND.email}`}
+          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${BRAND.email}`}
+          target="_blank"
+          rel="noreferrer"
           aria-label="Email"
           className="w-[34px] h-[34px] rounded-full border border-line flex items-center justify-center hover:bg-brandRed hover:text-white hover:border-brandRed transition-colors"
         >
@@ -31,7 +35,9 @@ export default function Footer() {
         </a>
       </div>
 
-      <p className="text-xs text-inkSoft/70">© 2026 {BRAND.name}. All rights reserved.</p>
+      <p className="text-xs text-inkSoft/70">
+        © 2026 {BRAND.name}. All rights reserved.
+      </p>
 
       <button
         onClick={scrollToTop}
@@ -40,22 +46,22 @@ export default function Footer() {
       >
         <ArrowUp size={16} />
       </button>
-          <div className="relative h-28 overflow-hidden mb-4">
-  <motion.img
-    src={MikeScooty}
-    alt="Mike Driving"
-    className="absolute bottom-0 w-14 md:20"
-    animate={{
-      x: ["-20vw", "110vw"],
-      y: [0, -2, 2, -2, 0],
-    }}
-    transition={{
-      duration: 12,
-      repeat: Infinity,
-      ease: "linear",
-    }}
-  />
-</div>
+      <div className="relative h-28 overflow-hidden mb-4">
+        <motion.img
+          src={MikeScooty}
+          alt="Mike Driving"
+          className="absolute bottom-0 w-14 md:20"
+          animate={{
+            x: ["-20vw", "110vw"],
+            y: [0, -2, 2, -2, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      </div>
     </footer>
   );
 }

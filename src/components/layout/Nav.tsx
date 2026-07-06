@@ -16,26 +16,26 @@ const Nav = () => {
         border: "1px solid var(--border-ink)",
       }}
     >
-      {/* Track background — animates color based on theme */}
+   
       <motion.div
         className="absolute inset-0 rounded-full"
         animate={{
           backgroundColor: isDark
-            ? "rgba(124, 58, 237, 0.18)"   // soft purple tint for dark
-            : "rgba(220, 38, 38, 0.10)",   // soft red/brand tint for light
+            ? "rgba(124, 58, 237, 0.18)"   
+            : "rgba(220, 38, 38, 0.10)",  
         }}
         transition={{ duration: 0.35 }}
       />
 
-      {/* Thumb */}
+   
       <motion.div
         layout
         transition={{ type: "spring", stiffness: 500, damping: 30 }}
         className="relative w-6 h-6 rounded-full flex items-center justify-center z-10"
         style={{ marginLeft: isDark ? "auto" : 0 }}
         animate={{
-          backgroundColor: isDark ? "#F100ba" : "#ff5b4e", // purple <-> brandRed
-          color: "#FFF7ED", // cream icon color
+          backgroundColor: isDark ? "#F100ba" : "#ff5b4e", 
+          color: "#FFF7ED",
         }}
       >
         <AnimatePresence mode="wait" initial={false}>
@@ -52,7 +52,7 @@ const Nav = () => {
         </AnimatePresence>
       </motion.div>
 
-      {/* Quick pulse ring on toggle for extra "something changed" feedback */}
+   
       <motion.span
         key={theme}
         initial={{ opacity: 0.5, scale: 0.8 }}

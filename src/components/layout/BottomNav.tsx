@@ -58,8 +58,7 @@ export default function BottomNav() {
   };
 
   return (
-    // Wrapper spans full width and centers its child with flexbox —
-    // this avoids the left-1/2 + translate-x clipping issue with overflow-hidden ancestors.
+
     <div className="fixed bottom-4 sm:bottom-6 inset-x-0 z-50 flex justify-center px-3 pointer-events-none">
       <motion.nav
         initial={{ y: 100, opacity: 0 }}
@@ -67,42 +66,38 @@ export default function BottomNav() {
         transition={{ delay: 0.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="pointer-events-auto glass shadow-soft rounded-full px-1.5 sm:px-2 py-1.5 sm:py-2 flex items-center gap-0.5 sm:gap-1 max-w-[calc(100vw-1.5rem)] overflow-x-auto no-scrollbar"
       >
-        {ITEMS.map((item) => {
-          const isActive = active === item.id;
-          return (
-            <motion.button
-              key={item.id}
-              onClick={() => handleClick(item)}
-              whileHover={{ y: -4 }}
-              whileTap={{ scale: 0.88 }}
-              className="relative flex flex-col items-center justify-center w-9 h-9 sm:w-11 sm:h-11 shrink-0 rounded-full text-inkSoft"
-              aria-label={item.label}
-              aria-current={isActive}
-            >
-              {isActive && (
-                <motion.span
-                  layoutId="dock-active"
-                  className="absolute inset-0 rounded-full bg-brandRed/12 border border-brandRed/30"
-                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                />
-              )}
-              <motion.span
-                className="relative z-10"
-                style={{ color: isActive ? "var(--red)" : "inherit" }}
-                animate={isActive ? { scale: [1, 1.18, 1] } : {}}
-                transition={{ duration: 0.35 }}
-              >
-                {item.icon}
-              </motion.span>
-              {isActive && (
-                <motion.span
-                  layoutId="dock-dot"
-                  className="absolute -bottom-0.5 w-1 h-1 rounded-full bg-brandRed"
-                />
-              )}
-            </motion.button>
-          );
-        })}
+      {ITEMS.map((item) => {
+  const isActive = active === item.id;
+  return (
+    <motion.button
+      key={item.id}
+      onClick={() => handleClick(item)}
+      whileHover={{ y: -4 }}
+      whileTap={{ scale: 0.88 }}
+      className="relative flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 shrink-0 rounded-full text-inkSoft"
+      aria-label={item.label}
+      aria-current={isActive}
+    >
+      {isActive && (
+        <motion.span
+          layoutId="dock-active"
+          className="absolute inset-0 rounded-full bg-brandRed"
+          transition={{ type: "spring", stiffness: 300, damping: 25 }}
+        />
+      )}
+      <motion.span
+        className="relative z-10"
+        animate={{
+          scale: isActive ? [1, 1.15, 1] : 1,
+          color: isActive ? "var(--cream)" : "var(--ink-soft)",
+        }}
+        transition={{ duration: 0.35 }}
+      >
+        {item.icon}
+      </motion.span>
+    </motion.button>
+  );
+})}
 
         <div className="w-px h-6 bg-(--border-ink) mx-1 shrink-0" />
         <Nav />

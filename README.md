@@ -1,6 +1,6 @@
 # Smile With Mike — Website
 
-A React + TypeScript + Tailwind + React Router site for the Smile With Mike animation brand.
+A React + TypeScript + Tailwind + React Router site for the Mike's Universe animation brand.
 
 ## Structure
 

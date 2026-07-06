@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ShoppingCart, Check } from "lucide-react";
 import Mike from "@/components/common/Mike";
 import { PRODUCTS } from "@/data/products";
+import MikeShoppingCart from "@/assets/MikeShopping.png";
 
 export default function MikeUniverse() {
   const [cart, setCart] = useState<string[]>([]);
@@ -12,7 +13,10 @@ export default function MikeUniverse() {
   const addToCart = (id: string) => {
     setCart((c) => [...c, id]);
     setJustAdded(id);
-    window.setTimeout(() => setJustAdded((cur) => (cur === id ? null : cur)), 900);
+    window.setTimeout(
+      () => setJustAdded((cur) => (cur === id ? null : cur)),
+      900,
+    );
   };
 
   return (
@@ -21,7 +25,10 @@ export default function MikeUniverse() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
       className="min-h-screen px-[6vw] py-10"
-      style={{ background: "radial-gradient(120% 100% at 50% 0%, var(--cream) 0%, var(--paper) 55%)" }}
+      style={{
+        background:
+          "radial-gradient(120% 100% at 50% 0%, var(--cream) 0%, var(--paper) 55%)",
+      }}
     >
       {/* top bar */}
       <div className="flex items-center justify-between mb-10">
@@ -29,7 +36,7 @@ export default function MikeUniverse() {
           to="/"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-inkSoft hover:text-ink transition-colors"
         >
-          <ArrowLeft size={16} /> Back to Smile With Mike
+          <ArrowLeft size={16} /> Back to Mike's Universe
         </Link>
         <div className="relative flex items-center gap-1.5 text-sm font-semibold">
           <ShoppingCart size={17} />
@@ -48,7 +55,10 @@ export default function MikeUniverse() {
 
       {/* hero */}
       <div className="flex flex-col items-center text-center mb-14">
-        <motion.div animate={{ rotate: [0, -4, 4, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
+        <motion.div
+          animate={{ rotate: [0, -4, 4, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        >
           <Mike size={140} mood="idle" />
         </motion.div>
         <h1 className="font-display font-bold text-[clamp(32px,5vw,54px)] tracking-tight mt-4 mb-2">
@@ -77,10 +87,13 @@ export default function MikeUniverse() {
               </span>
             )}
             <div className="h-28 flex items-center justify-center mb-3">
-              <Mike size={70} mood="idle" />
+              {/* <Mike size={250} mood="idle" /> */}
+              <img src={MikeShoppingCart} alt="Shopping" className="w-24" />
             </div>
-            <h3 className="font-display font-semibold text-[15.5px] mb-1">{p.name}</h3>
-            <p className="text-inkSoft text-sm mb-4">₹{p.price}</p>
+            <h3 className="font-display font-semibold text-[15.5px] mb-1">
+              {p.name}
+            </h3>
+            {/* <p className="text-inkSoft text-sm mb-4">₹{p.price}</p>
             <motion.button
               onClick={() => addToCart(p.id)}
               whileTap={{ scale: 0.92 }}
@@ -103,13 +116,16 @@ export default function MikeUniverse() {
                   </motion.span>
                 )}
               </AnimatePresence>
-            </motion.button>
+            </motion.button> */}
+
+            <p className="text-inkSoft text-sm mb-4">Arriving Soon </p>
           </motion.div>
         ))}
       </div>
 
       <p className="text-center text-xs text-inkSoft/70 mt-16">
-        Demo storefront — wire this up to Shopify, Razorpay, or your checkout of choice.
+        Demo storefront — wire this up to Shopify, Razorpay, or your checkout of
+        choice.
       </p>
     </motion.section>
   );

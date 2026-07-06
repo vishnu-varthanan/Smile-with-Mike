@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const Colobrate = () => {
   return (
@@ -7,8 +7,8 @@ const Colobrate = () => {
         href="/"
         className="flex items-center gap-2 text-lg sm:text-xl md:text-2xl font-semibold"
       >
-        <span>Smile with</span>
-        <span className="text-brandRed">Mike</span>
+        <span>Mike's</span>
+        <span className="text-brandRed"> Universe </span>
       </a>
     </header>
   );

@@ -32,13 +32,13 @@ export default function Team() {
             delay={i * 110}
             className="text-center bg-card border border-line rounded-[22px] py-[34px] px-5 hover:-t ranslate-y-1.5 transition-transform"
           >
-            <div className="flex justify-center mb-3.5">
+            {/* <div className="flex justify-center mb-3.5">
             <img
   src={images[t.image as keyof typeof images]}
   alt={t.name}
   
 />
-            </div>
+            </div> */}
             <h3 className="text-[15.5px] mb-1 font-display font-semibold">{t.name}</h3>
             <p className="text-[12.5px] text-inkSoft m-0">{t.role}</p>
           </Reveal>

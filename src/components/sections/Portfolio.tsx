@@ -19,6 +19,7 @@ export default function Portfolio() {
     setLaunching(true);
     window.setTimeout(() => navigate("/mike-universe"), 480);
   };
+  
 
   return (
     <section id="portfolio" className="py-16">
@@ -97,7 +98,7 @@ export default function Portfolio() {
         </AnimatePresence>
       </div>
 
-      {/* cute full-screen transition overlay when launching Mike's Universe */}
+     
       <AnimatePresence>
         {launching && (
           <motion.div

@@ -9,19 +9,47 @@ export default function Hero() {
       id="top"
       className="relative min-h-[92vh] grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-10 px-[6vw] pt-10 pb-10 overflow-hidden"
       style={{
-        background: "radial-gradient(120% 100% at 80% 20%, var(--cream) 0%, var(--paper) 62%)",
+        background:
+          "radial-gradient(120% 100% at 80% 20%, var(--cream) 0%, var(--paper) 62%)",
       }}
     >
       {/* drifting background clouds */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <span className="cloud" style={{ width: 120, height: 36, top: "12%", left: "4%", animation: "drift 22s linear infinite" }} />
-        <span className="cloud" style={{ width: 80, height: 26, top: "26%", left: "-10%", animation: "drift 30s linear infinite -8s" }} />
-        <span className="cloud" style={{ width: 60, height: 20, top: "70%", left: "-6%", animation: "drift 26s linear infinite -4s" }} />
+        <span
+          className="cloud"
+          style={{
+            width: 120,
+            height: 36,
+            top: "12%",
+            left: "4%",
+            animation: "drift 22s linear infinite",
+          }}
+        />
+        <span
+          className="cloud"
+          style={{
+            width: 80,
+            height: 26,
+            top: "26%",
+            left: "-10%",
+            animation: "drift 30s linear infinite -8s",
+          }}
+        />
+        <span
+          className="cloud"
+          style={{
+            width: 60,
+            height: 20,
+            top: "70%",
+            left: "-6%",
+            animation: "drift 26s linear infinite -4s",
+          }}
+        />
       </div>
 
       <div className="relative z-10">
         <p className="flex items-center text-[13px] font-semibold uppercase tracking-wide text-inkSoft mb-4 animate-fadeUp">
-          <Dot /> Smile With Mike 
+          <Dot /> MIke's Universe
         </p>
 
         <h1 className="font-display font-bold leading-[0.98] tracking-tight text-[clamp(44px,6.4vw,84px)] mb-5 animate-fadeUp [animation-delay:150ms] opacity-0">
@@ -34,7 +62,8 @@ export default function Hero() {
         </h1>
 
         <p className="max-w-[440px] text-[17px] leading-relaxed text-inkSoft mb-8 animate-fadeUp [animation-delay:280ms] opacity-0">
-          Original stick-figure comedy, built for reels, told through Mike — 90K+ people already laugh with us every day.
+          Original Cute - figure comedy, built for reels, told through Mike —
+          90K+ people already laugh with us every day.
         </p>
 
         <div className="flex gap-3.5 flex-wrap mb-7 animate-fadeUp [animation-delay:420ms] opacity-0">
@@ -63,7 +92,9 @@ export default function Hero() {
             <Instagram size={18} />
           </a>
           <a
-            href={`mailto:${BRAND.email}`}
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${BRAND.email}`}
+            target="_blank"
+            rel="noreferrer"
             aria-label="Email"
             className="w-[38px] h-[38px] border border-line rounded-full flex items-center justify-center hover:bg-ink hover:text-paper hover:-translate-y-0.5 transition-all"
           >
@@ -75,7 +106,10 @@ export default function Hero() {
       <div className="relative flex items-center justify-center animate-fadeUp [animation-delay:280ms] opacity-0">
         <div
           className="absolute w-[320px] h-[320px] rounded-full blur-sm"
-          style={{ background: "radial-gradient(circle, var(--cream) 0%, transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(circle, var(--cream) 0%, transparent 70%)",
+          }}
         />
         <Mike size={300} mood="hero" />
       </div>
