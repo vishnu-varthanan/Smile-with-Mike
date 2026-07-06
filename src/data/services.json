@@ -1,0 +1,8 @@
+[
+  { "id": "promo", "title": "Brand Promotions", "description": "Mike carries your product inside an actual story." },
+  { "id": "reels", "title": "Instagram Reels", "description": "Fast, native comedy built for the feed." },
+  { "id": "custom", "title": "Custom Animation", "description": "Bespoke character animation, frame by frame." },
+  { "id": "character", "title": "Character Creation", "description": "New faces for your brand, styled like Mike." },
+  { "id": "shorts", "title": "Comedy Shorts", "description": "Pure entertainment, no pitch attached." },
+  { "id": "campaigns", "title": "Creative Campaigns", "description": "Multi-part series that build an audience over weeks." }
+]

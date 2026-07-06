@@ -1,0 +1,20 @@
+[
+  {
+    "id": "vishnu",
+    "name": "Vishnu Varthanan T.S",
+    "image": "vish",
+    "role": "Director | Animator | Product Developer"
+  },
+  {
+    "id": "miracline",
+    "name": "Miracline A",
+    "image": "mirac",
+    "role": "Animator | Frontend Developer"
+  },
+  {
+    "id": "jothika",
+    "name": "Jothika R",
+    "image": "jo",
+    "role": "Animator | Software Engineer"
+  }
+]

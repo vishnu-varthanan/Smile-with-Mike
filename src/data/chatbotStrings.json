@@ -1,0 +1,22 @@
+{
+  "greeting": {
+    "en": "Hi! I'm Mike Assistant. Ask me anything about Mike's Universe 👋",
+    "ta": "வணக்கம்! நான் Mike Assistant. Mike's Universe பற்றி எதுவும் கேளுங்கள் 👋",
+    "tanglish": "Hi! Naa Mike Assistant. Mike's Universe pathi enna வேணும்na kேlunga 👋"
+  },
+  "placeholder": {
+    "en": "Type a question...",
+    "ta": "ஒரு கேள்வியை type செய்யுங்கள்...",
+    "tanglish": "Oru question type pannunga..."
+  },
+  "fallback": {
+    "en": "Hmm, not sure about that one — try one of the quick questions below, or email smilewithmike05@gmail.com.",
+    "ta": "அதைப் பற்றி தெரியவில்லை — கீழே உள்ள quick questions-ஐ try செய்யுங்கள் அல்லது smilewithmike05@gmail.com-க்கு mail அனுப்புங்கள்.",
+    "tanglish": "Adhu pathi theriyala — kீழே iருkற quick questions try pannunga illna smilewithmike05@gmail.com-ku mail pannunga."
+  },
+  "quickQuestionsLabel": {
+    "en": "Quick questions",
+    "ta": "விரைவு கேள்விகள்",
+    "tanglish": "Quick questions"
+  }
+}

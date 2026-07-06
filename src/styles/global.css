@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #ffe8c8;
+  --paper: #fff9f0;
+  --ink: #15130f;
+  --ink-soft: #6b6459;
+  --red: #e8362e;
+  /* --red: #F100ba; */
+  --purple: #6c4fd6;
+  --line: rgba(21, 19, 15, 0.1);
+  --card: #ffffff;
+  --border-ink: rgba(32, 26, 43, 0.12);
+}
+
+.dark {
+  --cream: #1c1812;
+  --paper: #15130f;
+  --ink: #fbf3e4;
+  --ink-soft: #b8ae9c;
+  --red: #ff5b4e;
+   /* --red: #F100ba; */
+  --purple: #a996ff;
+  --line: rgba(251, 243, 228, 0.12);
+  --card: #211d17;
+  --border-ink: rgba(246, 241, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  transition: background 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* brand dot motif — used across Nav, Hero, section labels */
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.dot-big {
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+  margin-right: 0;
+  position: relative;
+  top: -6px;
+}
+
+/* cursor-follow dot, desktop only */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--red);
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.85;
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cursor-dot {
+    display: block;
+  }
+}
+
+/* Mike idle motion */
+.mike-wrap {
+  position: relative;
+}
+.mike-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+}
+.mike-wrap.idle,
+.mike-wrap.hero {
+  animation: float 4.5s ease-in-out infinite;
+}
+.mike-wrap.wave {
+  animation: wave 2.2s ease-in-out infinite;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-2deg);
+  }
+}
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+}
+
+/* drifting background clouds/birds in hero */
+.cloud {
+  position: absolute;
+  border-radius: 100px;
+  background: var(--cream);
+  opacity: 0.7;
+  filter: blur(1px);
+}
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(140vw);
+  }
+}
+
+/* paper plane on contact success */
+.paper-plane {
+  animation: fly 1.4s ease-in-out infinite;
+  color: var(--red);
+}
+@keyframes fly {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(4px, -6px) rotate(8deg);
+  }
+}
+
+
+/* For customized scroll */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background:   #ff5b4e;
+   /* background: #F100ba; */
+  border-radius: 5px;
+}
+
+.select-dropdown::-webkit-scrollbar-thumb {
+  background: #ced1db;
+  border-radius: 5px;
+}
+
+.select-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lite-scrollbar::-webkit-scrollbar-thumb {
+  background: #e7e7f1;
+  border-radius: 3px;
+}
+
+.lite-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.do-text-wrap {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.spin-button-none::-webkit-outer-spin-button,
+.spin-button-none::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #4a4a4a;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #339a9c !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card-ink-border { border: 1.5px solid var(--border-ink); }
+.shadow-soft { box-shadow: 0 20px 45px -20px var(--shadow-ink); }
+.wavy-divider { display: block; width: 100%; height: 60px; }

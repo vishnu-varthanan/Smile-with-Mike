@@ -1,0 +1,6 @@
+[
+  { "id": "followers", "value": 90, "suffix": "K+", "label": "Followers" },
+  { "id": "views", "value": 25, "suffix": "M+", "label": "Monthly views" },
+  { "id": "engagement", "value": 6, "suffix": "M+", "label": "Insight" },
+  { "id": "laughs", "value": 0, "suffix": "", "label": "Laughs", "customLabel": "Millions" }
+]

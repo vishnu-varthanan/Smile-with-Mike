@@ -1,0 +1,72 @@
+[
+  {
+    "id": "who",
+    "question": {
+      "en": "Who is Smile With Mike?",
+      "ta": "Smile With Mike என்றால் என்ன?",
+      "tanglish": "Smile With Mike na yaaru?"
+    },
+    "answer": {
+      "en": "We're Mike's Universe, a small animation studio built around Mike, an original stick-figure character. 85K+ people follow along for comedy that feels real.",
+      "ta": "நாங்கள் Mike's Universe, Mike என்ற ஒரு character-ஐ வைத்து comedy animation உருவாக்கும் ஒரு சிறிய studio. 85K+ பேர் எங்களை follow செய்கிறார்கள்.",
+      "tanglish": "Naanga Mike's Universe, oru small animation studio, Mike nu oru original character vachu comedy pannuvom. 85K+ pேpல் follow pannranga."
+    },
+    "keywords": ["who", "about", "smile with mike", "mike's universe", "yaaru", "studio"]
+  },
+  {
+    "id": "collab",
+    "question": {
+      "en": "How can I collaborate?",
+      "ta": "நான் எப்படி collaborate செய்யலாம்?",
+      "tanglish": "Naa eppadi collab pannalam?"
+    },
+    "answer": {
+      "en": "Just drop us your brand name and what you're building — tap Contact below and we'll reply within a day.",
+      "ta": "உங்கள் brand பெயரையும் தேவையையும் சொல்லுங்கள் — கீழே Contact-ஐ தட்டவும், நாங்கள் ஒரு நாளில் பதிலளிப்போம்.",
+      "tanglish": "Unga brand name and idea sollunga — keezhe Contact tap pannunga, naanga oru naal-la reply pannuvom."
+    },
+    "keywords": ["collaborate", "collab", "partner", "work together", "brand"]
+  },
+  {
+    "id": "services",
+    "question": {
+      "en": "What services do you offer?",
+      "ta": "நீங்கள் என்ன சேவைகள் வழங்குகிறீர்கள்?",
+      "tanglish": "Neenga enna services kudukkareenga?"
+    },
+    "answer": {
+      "en": "Brand promotions, Instagram reels, custom animation, character creation, comedy shorts and full campaigns — check the Services section above.",
+      "ta": "Brand promotions, Instagram reels, custom animation, character creation, comedy shorts மற்றும் full campaigns — மேலே Services section-ஐ பாருங்கள்.",
+      "tanglish": "Brand promotions, reels, custom animation, character creation, comedy shorts, campaigns ellam pannuvom — mேlே Services section paakalam."
+    },
+    "keywords": ["services", "offer", "what do you do", "சேவை"]
+  },
+  {
+    "id": "pricing",
+    "question": {
+      "en": "What's your pricing?",
+      "ta": "உங்கள் pricing என்ன?",
+      "tanglish": "Unga pricing enna?"
+    },
+    "answer": {
+      "en": "Pricing depends on the format — a single story is different from a dedicated reel series. Share your brief via Contact and we'll send a quote.",
+      "ta": "Pricing format-ஐ பொறுத்து மாறும். உங்கள் brief-ஐ Contact மூலம் அனுப்புங்கள், நாங்கள் quote அனுப்புவோம்.",
+      "tanglish": "Pricing format based-a maarum. Unga brief-ஐ Contact vazhi anuppunga, naanga quote anuppuvom."
+    },
+    "keywords": ["price", "pricing", "cost", "rate", "budget"]
+  },
+  {
+    "id": "contact",
+    "question": {
+      "en": "How do I contact you?",
+      "ta": "நான் உங்களை எப்படி தொடர்பு கொள்வது?",
+      "tanglish": "Naa unga contact eppadi pannuvathu?"
+    },
+    "answer": {
+      "en": "Email smilewithmike05@gmail.com or DM @smile.with.mike on Instagram — both work great.",
+      "ta": "smilewithmike05@gmail.com-க்கு mail அனுப்பலாம் அல்லது Instagram-ல் @smile.with.mike-க்கு DM செய்யலாம்.",
+      "tanglish": "smilewithmike05@gmail.com-ku mail pannunga illna Instagram-la @smile.with.mike-ku DM pannunga."
+    },
+    "keywords": ["contact", "email", "instagram", "reach", "dm"]
+  }
+]
