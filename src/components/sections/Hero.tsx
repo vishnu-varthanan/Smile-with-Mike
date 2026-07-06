@@ -62,7 +62,7 @@ export default function Hero() {
         </h1>
 
         <p className="max-w-[440px] text-[17px] leading-relaxed text-inkSoft mb-8 animate-fadeUp [animation-delay:280ms] opacity-0">
-          Original Cute - figure comedy, built for reels, told through Mike —
+          Original Cute - figure Animation, built for reels, told through Mike —
           90K+ people already laugh with us every day.
         </p>
 
