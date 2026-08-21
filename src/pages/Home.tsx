@@ -1,10 +1,10 @@
-import Hero from "@/components/sections/Hero";
-import Stats from "@/components/sections/Stats";
 import About from "@/components/sections/About";
-import Services from "@/components/sections/Services";
-import Portfolio from "@/components/sections/Portfolio";
-import Team from "@/components/sections/Team";
 import Contact from "@/components/sections/Contact";
+import Hero from "@/components/sections/Hero";
+import Portfolio from "@/components/sections/Portfolio";
+import Services from "@/components/sections/Services";
+import Stats from "@/components/sections/Stats";
+import Team from "@/components/sections/Team";
 
 export default function Home() {
   return (

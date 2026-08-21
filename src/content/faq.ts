@@ -1,35 +1,29 @@
-export type Lang = "en" | "ta" | "tanglish";
+import type { ChatLanguage, FaqItem } from "@/types";
 
-export interface FaqItem {
-  id: string;
-  question: Record<Lang, string>;
-  answer: Record<Lang, string>;
-}
-
-export const LANG_LABELS: Record<Lang, string> = {
+export const LANG_LABELS: Record<ChatLanguage, string> = {
   en: "EN",
   ta: "தமிழ்",
   tanglish: "Tanglish",
 };
 
-export const GREETING: Record<Lang, string> = {
-  en: "Hi, I'm Mike! Ask me anything about Mike's Universe👋",
-  ta: "ஹாய், நான் மைக்! Mike's Universe பத்தி என்ன வேணும்னாலும் கேளுங்க 👋",
-  tanglish: "Hi, naan Mike! Mike's Universe  pathi enna venumnalum kelunga 👋",
+export const GREETING: Record<ChatLanguage, string> = {
+  en: "Hi, I'm Mike! Ask me anything about Mikeverse 👋",
+  ta: "ஹாய், நான் மைக்! Mikeverse பத்தி என்ன வேணும்னாலும் கேளுங்க 👋",
+  tanglish: "Hi, naan Mike! Mikeverse pathi enna venumnalum kelunga 👋",
 };
 
 export const FAQS: FaqItem[] = [
   {
     id: "who",
     question: {
-      en: "Who is Smile With Mike?",
-      ta: "Smile With Mike என்றால் என்ன?",
-      tanglish: "Smile With Mike na yaaru?",
+      en: "Who is Smile with Mike?",
+      ta: "Smile with Mike என்றால் என்ன?",
+      tanglish: "Smile with Mike na yaaru?",
     },
     answer: {
-      en: "We're a Tamil animated comedy animated content creators built around Mike, a cute character with 90k+ followers.",
-      ta: "நாங்க ஒரு தமிழ் அனிமேஷன் காமெடி content creators, மைக் கேரக்டர் மூலமா 90K+ ஃபாலோவர்ஸ் வச்சிருக்கோம்.",
-      tanglish: "Naanga oru Tamil animated comedy content creators, Mike character moolama 90K+ followers vachirukom.",
+      en: "Smile with Mike is our Instagram comedy page. Mikeverse is the home — merch and stories starring Mike, with 100K+ followers.",
+      ta: "Smile with Mike எங்க Instagram comedy page. Mikeverse தான் home — Mike merch and stories, 100K+ followers.",
+      tanglish: "Smile with Mike naenga Instagram comedy page. Mikeverse thaan home — Mike merch and stories, 100K+ followers.",
     },
   },
   {

@@ -1,3 +1,9 @@
+export type Theme = "light" | "dark";
+
+export type MikeMood = "idle" | "hero" | "wave";
+
+export type ChatLanguage = "en" | "ta" | "tanglish";
+
 export interface StatItem {
   id: string;
   value: number;
@@ -23,38 +29,40 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
-  image:string;
+  image: string;
 }
-
-export type MikeMood = "idle" | "hero" | "wave";
 
 export type PortfolioCategory =
   | "Comedy"
   | "Brand"
   | "Animation"
   | "Social Media"
-  | "E-commerce"
-  | "Trending";
+  | "E-commerce";
 
 export interface PortfolioItem {
   id: string;
   title: string;
   category: PortfolioCategory;
   description: string;
-  stat: string;
+  linkTo?: string;
+  featured?: boolean;
 }
 
-export type ChatLanguage = "en" | "ta" | "tanglish";
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+  tag: string;
+}
 
 export interface ChatMessage {
   id: string;
-  from: "mike" | "user";
+  from: "bot" | "user";
   text: string;
 }
 
-export interface FaqEntry {
+export interface FaqItem {
   id: string;
   question: Record<ChatLanguage, string>;
   answer: Record<ChatLanguage, string>;
-  keywords: string[];
 }

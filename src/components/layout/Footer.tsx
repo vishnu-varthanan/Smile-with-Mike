@@ -1,15 +1,14 @@
 import { ArrowUp, Instagram, Mail } from "lucide-react";
-// import Mike from "@/components/common/Mike";
-import { BRAND } from "@/constants/brand";
-import MikeScooty from "@/assets/MikeScooty.gif";
 import { motion } from "framer-motion";
+import { mikeScooty } from "@/assets";
+import { BRAND } from "@/config/brand";
+import { gmailComposeUrl } from "@/lib/links";
+
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <footer className="px-[6vw] pt-16 pb-10 text-center border-t border-line w-screen">
-      {/* <Mike size={110} mood="wave" /> */}
-
       <p className="text-sm text-inkSoft mt-3 mb-4">
         Thanks for stopping by :)
       </p>
@@ -25,7 +24,7 @@ export default function Footer() {
           <Instagram size={16} />
         </a>
         <a
-          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${BRAND.email}`}
+          href={gmailComposeUrl()}
           target="_blank"
           rel="noreferrer"
           aria-label="Email"
@@ -40,6 +39,7 @@ export default function Footer() {
       </p>
 
       <button
+        type="button"
         onClick={scrollToTop}
         aria-label="Back to top"
         className="mt-5 w-[38px] h-[38px] rounded-full border border-line bg-card inline-flex items-center justify-center hover:-translate-y-[5px] transition-transform text-ink"
@@ -48,7 +48,7 @@ export default function Footer() {
       </button>
       <div className="relative h-28 overflow-hidden mb-4">
         <motion.img
-          src={MikeScooty}
+          src={mikeScooty}
           alt="Mike Driving"
           className="absolute bottom-0 w-14 md:20"
           animate={{

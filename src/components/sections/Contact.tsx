@@ -1,14 +1,11 @@
-import { useState, FormEvent, useRef } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import { Instagram, Mail, MessageCircle, Send } from "lucide-react";
-import emailjs from "@emailjs/browser";
-import Reveal from "@/components/common/Reveal";
 import Dot from "@/components/common/Dot";
-import { BRAND } from "@/constants/brand";
-
-const SERVICE_ID = "service_s36y9ny";
-const TEMPLATE_ID = "template_w93759t";
-const PUBLIC_KEY = "tf6eU6yLJU_CCdX-E";
-const AUTOREPLY_TEMPLATE_ID = "template_t62iwtt";
+import Reveal from "@/components/common/Reveal";
+import { BRAND } from "@/config/brand";
+import { SECTIONS } from "@/config/nav";
+import { sendContactEmails } from "@/lib/email";
+import { gmailComposeUrl } from "@/lib/links";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -16,42 +13,31 @@ export default function Contact() {
   const [error, setError] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
     const form = formRef.current;
     if (!form) return;
 
     setSending(true);
     setError(false);
 
-    // Send to you (owner notification)
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY)
-      .then((res) => {
-        console.log("Owner email sent:", res);
-        return emailjs.sendForm(
-          SERVICE_ID,
-          AUTOREPLY_TEMPLATE_ID,
-          form,
-          PUBLIC_KEY,
-        );
-      })
-      .then((res) => {
-        console.log("Auto-reply sent:", res);
+    void sendContactEmails(form)
+      .then(() => {
         setSent(true);
-        setSending(false);
       })
-      .catch((err) => {
-        console.error("Email send failed at step:", err.status, err.text);
+      .catch(() => {
         setError(true);
+      })
+      .finally(() => {
         setSending(false);
       });
   };
+
   return (
-    <section id="contact" className="px-[6vw] py-24">
+    <section id={SECTIONS.contact} className="px-[6vw] py-24">
       <Reveal
         className="max-w-[1100px] mx-auto rounded-[28px] p-8 md:p-14 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
-        style={{ background: "var(--cream)" } as React.CSSProperties}
+        style={{ background: "var(--cream)" }}
       >
         <div>
           <p className="flex items-center text-[13px] font-semibold uppercase tracking-wide text-inkSoft mb-2">
@@ -62,7 +48,7 @@ export default function Contact() {
           </h2>
           <div className="flex flex-col gap-3">
             <a
-              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${BRAND.email}`}
+              href={gmailComposeUrl()}
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 text-[14.5px] font-medium"
@@ -78,7 +64,7 @@ export default function Contact() {
               <Instagram size={16} /> {BRAND.instagramHandle}
             </a>
             <a
-              href="https://wa.me/916380799589"
+              href={BRAND.whatsapp}
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 text-[14.5px] font-medium"
@@ -102,18 +88,21 @@ export default function Contact() {
             <>
               <input
                 name="name"
+                aria-label="Your name"
                 placeholder="Your name"
                 required
                 className="border border-line rounded-xl px-3.5 py-3 text-sm bg-transparent text-ink"
               />
               <input
                 name="email"
+                aria-label="Brand / email"
                 placeholder="Brand / email"
                 required
                 className="border border-line rounded-xl px-3.5 py-3 text-sm bg-transparent text-ink"
               />
               <textarea
                 name="message"
+                aria-label="What are we making?"
                 placeholder="What are we making?"
                 rows={3}
                 required

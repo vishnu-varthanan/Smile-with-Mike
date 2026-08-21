@@ -1,23 +1,14 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ShoppingCart, Check } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowLeft, ShoppingCart } from "lucide-react";
+import { mikeShopping } from "@/assets";
 import Mike from "@/components/common/Mike";
-import { PRODUCTS } from "@/data/products";
-import MikeShoppingCart from "@/assets/MikeShopping.png";
+import { BRAND } from "@/config/brand";
+import { ROUTES } from "@/config/nav";
+import { PRODUCTS } from "@/content/products";
 
 export default function MikeUniverse() {
-  const [cart, setCart] = useState<string[]>([]);
-  const [justAdded, setJustAdded] = useState<string | null>(null);
-
-  const addToCart = (id: string) => {
-    setCart((c) => [...c, id]);
-    setJustAdded(id);
-    window.setTimeout(
-      () => setJustAdded((cur) => (cur === id ? null : cur)),
-      900,
-    );
-  };
+  const cart: string[] = [];
 
   return (
     <motion.section
@@ -30,13 +21,12 @@ export default function MikeUniverse() {
           "radial-gradient(120% 100% at 50% 0%, var(--cream) 0%, var(--paper) 55%)",
       }}
     >
-      {/* top bar */}
       <div className="flex items-center justify-between mb-10">
         <Link
-          to="/"
+          to={ROUTES.home}
           className="inline-flex items-center gap-1.5 text-sm font-medium text-inkSoft hover:text-ink transition-colors"
         >
-          <ArrowLeft size={16} /> Back to Mike's Universe
+          <ArrowLeft size={16} /> Back to {BRAND.siteName}
         </Link>
         <div className="relative flex items-center gap-1.5 text-sm font-semibold">
           <ShoppingCart size={17} />
@@ -53,7 +43,6 @@ export default function MikeUniverse() {
         </div>
       </div>
 
-      {/* hero */}
       <div className="flex flex-col items-center text-center mb-14">
         <motion.div
           animate={{ rotate: [0, -4, 4, 0] }}
@@ -62,62 +51,35 @@ export default function MikeUniverse() {
           <Mike size={140} mood="idle" />
         </motion.div>
         <h1 className="font-display font-bold text-[clamp(32px,5vw,54px)] tracking-tight mt-4 mb-2">
-          Mike's Universe
+          {BRAND.siteName}
         </h1>
         <p className="text-inkSoft max-w-md">
           Wearable Mike. Stick him on your laptop, your wall, or yourself.
         </p>
       </div>
 
-      {/* products */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1100px] mx-auto">
-        {PRODUCTS.map((p, i) => (
+        {PRODUCTS.map((product, index) => (
           <motion.div
-            key={p.id}
+            key={product.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.06 }}
+            transition={{ delay: index * 0.06 }}
             whileHover={{ y: -6 }}
             className="relative bg-card border border-line rounded-[20px] p-5 flex flex-col"
           >
-            {p.tag && (
+            {product.tag && (
               <span className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wide text-brandRed bg-brandRed/10 px-2 py-1 rounded-full">
-                {p.tag}
+                {product.tag}
               </span>
             )}
             <div className="h-28 flex items-center justify-center mb-3">
-              {/* <Mike size={250} mood="idle" /> */}
-              <img src={MikeShoppingCart} alt="Shopping" className="w-24" />
+              <img src={mikeShopping} alt="Shopping" className="w-24" />
             </div>
             <h3 className="font-display font-semibold text-[15.5px] mb-1">
-              {p.name}
+              {product.name}
             </h3>
-            {/* <p className="text-inkSoft text-sm mb-4">₹{p.price}</p>
-            <motion.button
-              onClick={() => addToCart(p.id)}
-              whileTap={{ scale: 0.92 }}
-              className="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold bg-ink text-paper"
-            >
-              <AnimatePresence mode="wait">
-                {justAdded === p.id ? (
-                  <motion.span
-                    key="added"
-                    initial={{ opacity: 0, scale: 0.7 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="inline-flex items-center gap-1.5"
-                  >
-                    <Check size={14} /> Added
-                  </motion.span>
-                ) : (
-                  <motion.span key="add" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                    Add to cart
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </motion.button> */}
-
             <p className="text-inkSoft text-sm mb-4">Arriving Soon </p>
           </motion.div>
         ))}

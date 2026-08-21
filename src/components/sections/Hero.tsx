@@ -1,19 +1,20 @@
 import { Instagram, Mail } from "lucide-react";
-import Mike from "@/components/common/Mike";
 import Dot from "@/components/common/Dot";
-import { BRAND } from "@/constants/brand";
+import Mike from "@/components/common/Mike";
+import { BRAND } from "@/config/brand";
+import { SECTIONS } from "@/config/nav";
+import { gmailComposeUrl } from "@/lib/links";
 
 export default function Hero() {
   return (
     <section
-      id="top"
+      id={SECTIONS.top}
       className="relative min-h-[92vh] grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] items-center gap-10 px-[6vw] pt-10 pb-10 overflow-hidden"
       style={{
         background:
           "radial-gradient(120% 100% at 80% 20%, var(--cream) 0%, var(--paper) 62%)",
       }}
     >
-      {/* drifting background clouds */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <span
           className="cloud"
@@ -49,7 +50,7 @@ export default function Hero() {
 
       <div className="relative z-10">
         <p className="flex items-center text-[13px] font-semibold uppercase tracking-wide text-inkSoft mb-4 animate-fadeUp">
-          <Dot /> MIke's Universe
+          <Dot /> {BRAND.siteName}
         </p>
 
         <h1 className="font-display font-bold leading-[0.98] tracking-tight text-[clamp(44px,6.4vw,84px)] mb-5 animate-fadeUp [animation-delay:150ms] opacity-0">
@@ -63,18 +64,18 @@ export default function Hero() {
 
         <p className="max-w-[440px] text-[17px] leading-relaxed text-inkSoft mb-8 animate-fadeUp [animation-delay:280ms] opacity-0">
           Original Cute - figure Animation, built for reels, told through Mike —
-          90K+ people already laugh with us every day.
+          100K+ people already laugh with us every day.
         </p>
 
         <div className="flex gap-3.5 flex-wrap mb-7 animate-fadeUp [animation-delay:420ms] opacity-0">
           <a
-            href="#services"
+            href={`#${SECTIONS.services}`}
             className="inline-flex items-center gap-2 px-7 py-[15px] rounded-full font-semibold text-[15px] bg-ink text-paper hover:-translate-y-[3px] hover:scale-[1.03] transition-transform"
           >
             Watch Showreel
           </a>
           <a
-            href="#contact"
+            href={`#${SECTIONS.contact}`}
             className="inline-flex items-center gap-2 px-7 py-[15px] rounded-full font-semibold text-[15px] border border-line hover:-translate-y-[3px] hover:scale-[1.03] hover:border-brandRed hover:text-brandRed transition-transform"
           >
             Let's Collaborate
@@ -92,7 +93,7 @@ export default function Hero() {
             <Instagram size={18} />
           </a>
           <a
-            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${BRAND.email}`}
+            href={gmailComposeUrl()}
             target="_blank"
             rel="noreferrer"
             aria-label="Email"
@@ -107,8 +108,7 @@ export default function Hero() {
         <div
           className="absolute w-[320px] h-[320px] rounded-full blur-sm"
           style={{
-            background:
-              "radial-gradient(circle, var(--cream) 0%, transparent 70%)",
+            background: "radial-gradient(circle, var(--cream) 0%, transparent 70%)",
           }}
         />
         <Mike size={300} mood="hero" />

@@ -1,0 +1,26 @@
+---
+description: Freeze visual design until the user explicitly asks to change it
+alwaysApply: true
+---
+
+# Design lock
+
+Do not change how the site looks unless the user explicitly asks for a visual change.
+
+Locked: colors, fonts, spacing, radii, shadows, layout, motion, copy placement, Mike artwork, and component visuals.
+
+- Edit `src/styles/global.css` tokens and `@theme` only when asked to restyle
+- Never restyle, crop, or redraw files in `src/assets/`
+- Structure, refactors, routes, and data moves must keep the same classes, inline styles, and Framer Motion values
+- Bug fixes may restore *intended* behavior (e.g. a broken hover class) but must not introduce a new look
+- New pages/features must reuse existing tokens (`paper`, `ink`, `cream`, `brandRed`, `brandPurple`, `line`, `card`) and existing section/card patterns
+
+```tsx
+// ❌ BAD — unsolicited restyle
+<button className="rounded-md bg-black px-3 py-1">Send</button>
+
+// ✅ GOOD — keep the existing pill pattern
+<button className="self-start inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm bg-ink text-paper">
+  Send
+</button>
+```

@@ -1,0 +1,38 @@
+---
+description: Keep Mikeverse professionally structured — no messy or leftover code
+alwaysApply: true
+---
+
+# Professional structure
+
+Keep this codebase tidy. Prefer moving files and extracting constants over dumping logic into components.
+
+**Names:** `Mikeverse` = website and company. `Smile with Mike` = Instagram comedy page only. `Mike` = the character on all products.
+
+## Folders
+
+| Put here | What belongs |
+|---|---|
+| `src/config/` | Brand, routes, nav, env-backed settings |
+| `src/content/` | Copy, FAQ, products, portfolio, JSON |
+| `src/lib/` | Email, URL helpers, non-UI utilities |
+| `src/components/` | UI only (chatbot, common, layout, sections) |
+| `src/pages/` | Route screens |
+| `src/app/` | Router |
+
+## Code
+
+- No unused imports, commented-out blocks, duplicate data files, or one-off relative imports (`../../`) — use `@/`
+- Align naming, quotes, and import order with neighboring files
+- Types live in `src/types`; do not redefine the same interface in a component
+- Secrets and IDs go in `.env.local` (`VITE_*`), never hardcoded
+- Package manager is Yarn: `yarn`, `yarn dev`, `yarn build`
+
+```ts
+// ❌ BAD
+const WHATSAPP = "https://wa.me/916380799589"; // buried in Contact.tsx
+
+// ✅ GOOD
+import { BRAND } from "@/config/brand";
+<a href={BRAND.whatsapp}>WhatsApp</a>
+```

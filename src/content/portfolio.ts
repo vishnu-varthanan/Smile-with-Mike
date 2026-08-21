@@ -1,22 +1,13 @@
-export type PortfolioCategory = "Comedy" | "Brand" | "Animation" | "Social Media" | "E-commerce";
-
-export interface PortfolioItem {
-  id: string;
-  title: string;
-  category: PortfolioCategory;
-  description: string;
-  /** Internal route to navigate to on click, if this card represents a whole site/app rather than a video/post */
-  linkTo?: string;
-  featured?: boolean;
-}
+import { ROUTES } from "@/config/nav";
+import type { PortfolioCategory, PortfolioItem } from "@/types";
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: "mike-universe",
-    title: "Mike's Universe",
+    title: "Mikeverse",
     category: "E-commerce",
-    description: "The official Mike merch store — tees, stickers and prints.",
-    linkTo: "/mike-universe",
+    description: "The official Mike merch store — tees, stickers, notes and prints.",
+    linkTo: ROUTES.shop,
     featured: true,
   },
   {
@@ -45,7 +36,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
 ];
 
-export const PORTFOLIO_FILTERS: ("All" | PortfolioCategory)[] = [
+export const PORTFOLIO_FILTERS: Array<"All" | PortfolioCategory> = [
   "All",
   "Comedy",
   "Brand",

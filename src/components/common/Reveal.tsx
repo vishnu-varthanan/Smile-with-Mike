@@ -1,20 +1,23 @@
-import React from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { useReveal } from "@/hooks/useReveal";
 
 interface RevealProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   delay?: number;
-  as?: keyof JSX.IntrinsicElements;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }
 
-export default function Reveal({ children, className = "", delay = 0, as = "div", style = {} }: RevealProps) {
+export default function Reveal({
+  children,
+  className = "",
+  delay = 0,
+  style = {},
+}: RevealProps) {
   const { ref, visible } = useReveal();
-  const Tag = as as any;
 
   return (
-    <Tag
+    <div
       ref={ref}
       className={className}
       style={{
@@ -25,6 +28,6 @@ export default function Reveal({ children, className = "", delay = 0, as = "div"
       }}
     >
       {children}
-    </Tag>
+    </div>
   );
 }

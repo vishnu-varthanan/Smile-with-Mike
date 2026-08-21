@@ -1,9 +1,4 @@
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  tag: string;
-}
+import type { Product } from "@/types";
 
 export const PRODUCTS: Product[] = [
   { id: "tee-classic", name: "Classic Mike Tee", price: 599, tag: "Bestseller" },
