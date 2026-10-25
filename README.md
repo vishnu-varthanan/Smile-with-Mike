@@ -1,6 +1,6 @@
-# Mikeverse
+# Mike Verse
 
-React + TypeScript site for Mikeverse. Smile with Mike is the Instagram comedy page; this site is the shop and home. Brand look stays in `src/styles/global.css`.
+React + TypeScript site for Mike Verse. Smile with Mike is the Instagram comedy page; this site is the home. Brand look stays in `src/styles/global.css`.
 
 ## Stack
 

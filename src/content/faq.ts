@@ -7,9 +7,9 @@ export const LANG_LABELS: Record<ChatLanguage, string> = {
 };
 
 export const GREETING: Record<ChatLanguage, string> = {
-  en: "Hi, I'm Mike! Ask me anything about Mikeverse 👋",
-  ta: "ஹாய், நான் மைக்! Mikeverse பத்தி என்ன வேணும்னாலும் கேளுங்க 👋",
-  tanglish: "Hi, naan Mike! Mikeverse pathi enna venumnalum kelunga 👋",
+  en: "Hi, I'm Mike! Ask me anything about Mike Verse 👋",
+  ta: "ஹாய், நான் மைக்! Mike Verse பத்தி என்ன வேணும்னாலும் கேளுங்க 👋",
+  tanglish: "Hi, naan Mike! Mike Verse pathi enna venumnalum kelunga 👋",
 };
 
 export const FAQS: FaqItem[] = [
@@ -21,9 +21,9 @@ export const FAQS: FaqItem[] = [
       tanglish: "Smile with Mike na yaaru?",
     },
     answer: {
-      en: "Smile with Mike is our Instagram comedy page. Mikeverse is the home — merch and stories starring Mike, with 100K+ followers.",
-      ta: "Smile with Mike எங்க Instagram comedy page. Mikeverse தான் home — Mike merch and stories, 100K+ followers.",
-      tanglish: "Smile with Mike naenga Instagram comedy page. Mikeverse thaan home — Mike merch and stories, 100K+ followers.",
+      en: "Smile with Mike is our Instagram comedy page. Mike Verse is the home — stories starring Mike, with 100K+ followers.",
+      ta: "Smile with Mike எங்க Instagram comedy page. Mike Verse தான் home — Mike stories, 100K+ followers.",
+      tanglish: "Smile with Mike naenga Instagram comedy page. Mike Verse thaan home — Mike stories, 100K+ followers.",
     },
   },
   {

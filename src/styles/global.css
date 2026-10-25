@@ -191,6 +191,52 @@ h3,
   }
 }
 
+.mike-scooter-lane {
+  animation: mike-scooter-cruise 12s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .mike-scooter-lane {
+    animation-duration: 18s;
+  }
+}
+
+@media (min-width: 1280px) {
+  .mike-scooter-lane {
+    animation-duration: 24s;
+  }
+}
+
+@keyframes mike-scooter-cruise {
+  from {
+    transform: translate3d(-7rem, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(100% + 7rem), 0, 0);
+  }
+}
+
+.mike-scooter-bob {
+  animation: mike-scooter-bob 0.55s ease-in-out infinite;
+}
+
+@keyframes mike-scooter-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mike-scooter-lane,
+  .mike-scooter-bob {
+    animation: none;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }

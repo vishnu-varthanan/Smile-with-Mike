@@ -20,7 +20,6 @@ export const DOCK_ITEMS = [
   { id: "about", label: "About", targetId: SECTIONS.about },
   { id: "services", label: "Services", targetId: SECTIONS.services },
   { id: "portfolio", label: "Work", targetId: SECTIONS.portfolio },
-  { id: "team", label: "Team", targetId: SECTIONS.team },
   { id: "contact", label: "Contact", targetId: SECTIONS.contact },
 ] as const;
 

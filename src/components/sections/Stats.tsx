@@ -8,7 +8,7 @@ const stats = statsData as StatItem[];
 export default function Stats() {
   return (
     <section className="px-[6vw] py-[70px] border-t border-b border-line">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-[1100px] mx-auto">
+      <div className="grid grid-cols-2 gap-6 max-w-[640px] mx-auto">
         {stats.map((stat, index) => (
           <Reveal key={stat.id} delay={index * 90} className="text-center">
             <div className="font-display font-bold text-brandRed text-[clamp(30px,4vw,46px)]">

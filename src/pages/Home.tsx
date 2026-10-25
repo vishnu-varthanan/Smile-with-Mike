@@ -4,7 +4,6 @@ import Hero from "@/components/sections/Hero";
 import Portfolio from "@/components/sections/Portfolio";
 import Services from "@/components/sections/Services";
 import Stats from "@/components/sections/Stats";
-import Team from "@/components/sections/Team";
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
       <About />
       <Services />
       <Portfolio />
-      <Team />
       <Contact />
     </>
   );

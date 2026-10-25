@@ -1,6 +1,6 @@
 import { Instagram, Mail } from "lucide-react";
+import { mikeLogo } from "@/assets";
 import Dot from "@/components/common/Dot";
-import Mike from "@/components/common/Mike";
 import { BRAND } from "@/config/brand";
 import { SECTIONS } from "@/config/nav";
 import { gmailComposeUrl } from "@/lib/links";
@@ -111,7 +111,16 @@ export default function Hero() {
             background: "radial-gradient(circle, var(--cream) 0%, transparent 70%)",
           }}
         />
-        <Mike size={300} mood="hero" />
+        <div
+          className="mike-wrap hero relative w-[min(300px,72vw)]"
+          style={{ aspectRatio: "616 / 763" }}
+        >
+          <img
+            src={mikeLogo}
+            alt="Mike, the Mike Verse character"
+            draggable={false}
+          />
+        </div>
       </div>
     </section>
   );

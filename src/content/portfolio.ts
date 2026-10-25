@@ -4,7 +4,7 @@ import type { PortfolioCategory, PortfolioItem } from "@/types";
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: "mike-universe",
-    title: "Mikeverse",
+    title: "Mike Verse",
     category: "E-commerce",
     description: "The official Mike merch store — tees, stickers, notes and prints.",
     linkTo: ROUTES.shop,

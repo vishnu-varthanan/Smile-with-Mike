@@ -7,7 +7,7 @@ alwaysApply: true
 
 Keep this codebase tidy. Prefer moving files and extracting constants over dumping logic into components.
 
-**Names:** `Mikeverse` = website and company. `Smile with Mike` = Instagram comedy page only. `Mike` = the character on all products.
+**Names:** `Mike Verse` = website and company (domain: mikeverse.com / .io). `Smile with Mike` = Instagram comedy page only. `Mike` = the character on all products.
 
 ## Folders
 

@@ -10,11 +10,11 @@ const cards = aboutData as AboutCard[];
 export default function About() {
   return (
     <section id={SECTIONS.about} className="pt-24 pb-14">
-      <Reveal className="max-w-[640px] mx-auto mb-12 px-[6vw]">
+      <Reveal className="max-w-[800px] mx-auto mb-12 px-[6vw]">
         <p className="flex items-center text-[13px] font-semibold uppercase tracking-wide text-inkSoft mb-2">
           <Dot /> About
         </p>
-        <h2 className="font-display font-bold tracking-tight text-[clamp(28px,3.6vw,42px)]">
+        <h2 className="font-display font-bold tracking-tight text-[clamp(28px,3.6vw,42px)] whitespace-nowrap max-sm:whitespace-normal">
           Welcome to {BRAND.siteName}.
         </h2>
       </Reveal>

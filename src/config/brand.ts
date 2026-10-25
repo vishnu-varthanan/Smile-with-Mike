@@ -1,7 +1,7 @@
 export const BRAND = {
-  /** Company and website — use this on the site chrome. */
-  name: "Mikeverse",
-  siteName: "Mikeverse",
+  /** Company and website display name. Domain stays mikeverse.com / .io */
+  name: "Mike Verse",
+  siteName: "Mike Verse",
   /** Instagram comedy page only — not the website name. */
   showName: "Smile with Mike",
   tagline: "We make people smile.",

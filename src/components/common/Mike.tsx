@@ -13,7 +13,7 @@ export default function Mike({ size = 220, mood = "idle", className = "" }: Mike
       className={`mike-wrap ${mood} ${className}`}
       style={{ width: size, height: size }}
     >
-      <img src={mikeArt} alt="Mike, the Mikeverse character" draggable={false} />
+      <img src={mikeArt} alt="Mike, the Mike Verse character" draggable={false} />
     </div>
   );
 }

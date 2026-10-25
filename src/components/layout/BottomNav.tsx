@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Home, Info, LayoutGrid, Mail, Sparkles, Users } from "lucide-react";
+import { Home, Info, LayoutGrid, Mail, Sparkles } from "lucide-react";
 import { DOCK_ITEMS, ROUTES, type DockItemId } from "@/config/nav";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 
@@ -10,7 +10,6 @@ const DOCK_ICONS: Record<DockItemId, ReactNode> = {
   about: <Info size={17} />,
   services: <Sparkles size={17} />,
   portfolio: <LayoutGrid size={17} />,
-  team: <Users size={17} />,
   contact: <Mail size={17} />,
 };
 

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { mikeLogo } from "@/assets";
 import { ROUTES } from "@/config/nav";
 
 export default function SiteHeader() {
@@ -8,8 +9,13 @@ export default function SiteHeader() {
         to={ROUTES.home}
         className="flex items-center gap-2 text-lg sm:text-xl md:text-2xl font-semibold"
       >
+        <img
+          src={mikeLogo}
+          alt=""
+          className="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0"
+        />
         <span>Mike</span>
-        <span className="text-brandRed">verse</span>
+        <span className="text-brandRed">Verse</span>
       </Link>
     </header>
   );
